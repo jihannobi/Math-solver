@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 10 Math Solver</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Rubik', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(12px);
+            border-radius: 20px;
+            padding: 30px;
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #f8fafc;
+        }
+
+        p {
+            font-size: 14px;
+            margin-bottom: 20px;
+            color: #cbd5e1;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        label {
+            display: inline-block;
+            padding: 12px 25px;
+            background: #3b82f6;
+            color: #fff;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-bottom: 15px;
+            transition: background 0.3s;
+        }
+
+        label:hover {
+            background: #2563eb;
+        }
+
+        button {
+            padding: 12px 25px;
+            background: #10b981;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background: #059669;
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 15px;
+            min-height: 120px;
+            white-space: pre-wrap;
+            color: #e2e8f0;
+            font-size: 15px;
+        }
+
+        .loader {
+            border: 4px solid #fff;
+            border-top: 4px solid #3b82f6;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            margin-top: 15px;
+        }
+
+        @keyframes spin {
+            0% {transform: rotate(0deg);}
+            100% {transform: rotate(360deg);}
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>১০ম শ্রেণির গণিত Solver</h1>
+        <p>ছবি আপলোড করুন এবং সমাধান দেখতে ক্লিক করুন।</p>
+
+        <input type="file" id="imageInput" accept="image/*">
+        <label for="imageInput">ছবি নির্বাচন করুন</label><br>
+
+        <button onclick="solveMath()">Solve</button>
+
+        <div id="output">এখানে সমাধান দেখা যাবে...</div>
+    </div>
+
+    <script>
+        function solveMath() {
+            const file = document.getElementById('imageInput').files[0];
+            if (!file) {
+                alert('দয়া করে ছবি আপলোড করুন।');
+                return;
+            }
+
+            document.getElementById('output').innerHTML = '<div class="loader"></div><br>ছবি প্রসেস করা হচ্ছে...';
+
+            // এখানে আসল API কানেক্ট করতে হবে
+            setTimeout(() => {
+                document.getElementById('output').innerText = 
+                    "ডেমো:\n\nOCR ও Solver API কানেক্ট করলে এখানে সমাধান দেখা যাবে।";
+            }, 2500);
+        }
+    </script>
+
+</body>
+</html>
